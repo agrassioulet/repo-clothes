@@ -12,7 +12,7 @@ import { ProductService } from 'src/app/_services/product.service';
 })
 export class ProductDetailComponent implements OnInit {
   resultBuying :ResultType = ''
-  numberStockFormControl = new FormControl('', [Validators.required, Validators.pattern('[0-9]*')]);
+  numberQuantityFormControl = new FormControl('', [Validators.required, Validators.pattern('[0-9]*')]);
   id: string;
   product: any;
   selectedSize!: string;
@@ -37,7 +37,7 @@ export class ProductDetailComponent implements OnInit {
 
   addProductToCart() {
     if(this.auth.isUserLogin()) {
-      this.productService.addProductToCart(this.product, this.numberStockFormControl.value).subscribe(result => {
+      this.productService.addProductToCart(this.product, this.numberQuantityFormControl.value).subscribe(result => {
         console.log(result)
         this.resultBuying = 'productAdded'
       })

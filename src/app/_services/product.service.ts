@@ -11,28 +11,28 @@ export class ProductService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getAllProducts()
-  {
+  public getAllProducts() {
     return this.httpClient.get(this.url);
   }
 
-  public getProductById(id: string): Observable<any> 
-  {
-    return this.httpClient.get<any>(this.url + "/getProductById"+ '/' + id);
+  public getProductById(id: string): Observable<any> {
+    return this.httpClient.get<any>(this.url + "/getProductById" + '/' + id);
   }
 
-  public getProductsByCategory(category: string): Observable<any> 
-  {
+  public getProductsByCategory(category: string): Observable<any> {
     return this.httpClient.get<any>(this.url + "/getProductsByCategory" + '/' + category);
   }
 
-  public createProduct(product:any): Observable <void>
-  {
-    return this.httpClient.post<void>(this.url,product)
+  public createProduct(product: any): Observable<void> {
+    return this.httpClient.post<void>(this.url, product)
   }
-  
-  public addProductToCart(product: any, stock: number) {
-    return this.httpClient.post<void>(this.url + "/addProductToCart", {id_product: product._id, stock: stock})
+
+  public addProductToCart(product: any, quantity: number) {
+    return this.httpClient.post<void>(this.url + "/addProductToCart", { id_product: product._id, quantity: quantity })
+  }
+
+  public getProductsForCart() {
+    return this.httpClient.get<any>(this.url + "/getProductsForCart");
   }
 
 }
