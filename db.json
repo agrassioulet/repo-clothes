@@ -1,0 +1,102 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "title": "Veste compactable imperméable et respirante",
+        "description": "",
+        "price": 140.00,
+        "stock": 94,
+        "brand": "NACARDO",
+        "category": "men",
+        "imageURL": ""
+      },
+      {
+        "id": 2,
+        "title": "Veste compactable imperméable et respirante",
+        "description": "",
+        "price": 148.00,
+        "stock": 94,
+        "brand": "NACARDO",
+        "category": "men",
+        "imageURL": ""
+      },
+      {
+        "id": 3,
+        "title": "Veste compactable imperméable et respirante",
+        "description": "",
+        "price": 147.00,
+        "stock": 94,
+        "brand": "NACARDO",
+        "category": "men",
+        "imageURL": ""
+      },
+      {
+        "id": 4,
+        "title": "Veste compactable imperméable et respirante",
+        "description": "",
+        "price": 143.00,
+        "stock": 94,
+        "brand": "NACARDO",
+        "category": "men",
+        "imageURL": ""
+      },
+      {
+        "id": 5,
+        "title": "Veste compactable imperméable et respirante",
+        "description": "",
+        "price": 142.00,
+        "stock": 94,
+        "brand": "NACARDO",
+        "category": "men",
+        "imageURL": ""
+      },
+      {
+        "id": 6,
+        "title": "Veste compactable imperméable et respirante",
+        "description": "",
+        "price": 140.00,
+        "stock": 94,
+        "brand": "NACARDO",
+        "category": "men",
+        "imageURL": ""
+      },
+
+
+      {
+        "id": 7,
+        "title": "Veste compactable imperméable pour femme",
+        "description": "",
+        "price": 143.00,
+        "stock": 94,
+        "brand": "NACARDO",
+        "category": "women",
+        "imageURL": ""
+      },
+      {
+        "id": 8,
+        "title": "Veste compactable imperméable pour femme",
+        "description": "",
+        "price": 142.00,
+        "stock": 94,
+        "brand": "NACARDO",
+        "category": "women",
+        "imageURL": ""
+      },
+      {
+        "id": 9,
+        "title": "Veste compactable imperméable pour femme",
+        "description": "",
+        "price": 140.00,
+        "stock": 94,
+        "brand": "NACARDO",
+        "category": "women",
+        "imageURL": ""
+      }
+
+
+
+
+      
+    ]
+
+}

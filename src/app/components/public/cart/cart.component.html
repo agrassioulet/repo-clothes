@@ -1,0 +1,85 @@
+<div class="cart_container">
+
+
+    <div class="left_part">
+
+        <h2>VOTRE PANIER</h2>
+
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="bold">Bold</mat-button-toggle>
+            <mat-button-toggle value="italic">Italic</mat-button-toggle>
+            <mat-button-toggle value="underline">Underline</mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <div class="items">
+            <div class="item">
+
+                <div class="left_part_item">
+                    <img src="./../../../assets/images/5c0b329d792b3bf8f647532366eb06184f6b9efb_Q8282_1.avif" alt="">
+
+                    <div class="item_properties">
+                        <h3 class="title_property">Chaussures de marche et de loisirs éco-responsables</h3>
+                        <p><span class="item_property">Couleur : </span> <span class="item_value">TERRE</span></p>
+                        <p><span class="item_property">Taille : </span> <span class="item_value">40</span></p>
+                        <p><span class="item_property">Quantité : </span> <span class="item_value">2</span></p>
+                    </div>
+
+                </div>
+
+                <div class="rigt_part_item">
+                    <div class="actions">
+                        <button mat-icon-button [matMenuTriggerFor]="menuActions" class="more_vert_actions">
+                            <mat-icon>more_vert</mat-icon>
+                          </button>
+                        <mat-menu #menuActions="matMenu">
+                            <button mat-menu-item>
+                                <mat-icon>delete</mat-icon>
+                                <span>Supprimer</span>
+                            </button>
+                            <button mat-menu-item>
+                                <mat-icon>edit</mat-icon>
+                                <span>Modifier</span>
+                            </button>
+                        </mat-menu>
+
+
+                        <p class="price">56,00 €</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="item">
+
+                <img src="./../../../assets/images/5c0b329d792b3bf8f647532366eb06184f6b9efb_Q8282_1.avif" alt="">
+
+
+            </div>
+
+            <div class="item">
+
+                <img src="./../../../assets/images/5c0b329d792b3bf8f647532366eb06184f6b9efb_Q8282_1.avif" alt="">
+
+                <p>fefeef</p>
+                <p>fefeef</p>
+                <p>fefeef</p>
+                <p>fefeef</p>
+                <p>fefeef</p>
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <div class="right_part">
+
+    </div>
+
+
+</div>

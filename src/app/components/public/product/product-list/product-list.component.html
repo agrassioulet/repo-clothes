@@ -1,0 +1,91 @@
+<!-- <div *ngFor="let product of data">
+    {{ product | json }}
+</div> -->
+
+
+<div class="container">
+    <h2 class="category_title">{{ category }}</h2>
+
+    <div class="info_selection">
+        <span class="number_products">{{ data.length }} articles</span>
+        <div class="right_part_info_selection d-flex">
+            <div class="sort_by">
+                <p (click)="hideSortByMenu=!hideSortByMenu" (mousedown)="false">
+                    TRIER PAR
+                    <i class="fa-solid fa-angle-{{ hideSortByMenu ? 'down' : 'up' }}"></i>
+                </p>
+                <div *ngIf="!hideSortByMenu" class="sub_menu_sort_by">
+                    <p>Meilleures ventes</p>
+                    <p>Les plus populaires</p>
+                    <p>Prix croissant</p>
+                    <p>Prix décroissant</p>
+                </div>
+            </div>
+
+
+            <p class="filter"  (click)="openFilterSideWindow()" (mousedown)="false">FILTRES</p>
+            <div id="filter_side_window" >
+                <h2>FILTRES</h2>
+                <span type="button" (click)="closeFilterSideWindow()"><i class="fa-solid fa-xmark"></i></span>
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title><button class="hide_button_style">COULEUR</button></mat-panel-title>
+                            <mat-panel-description>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <p>This is the primary content of the panel.</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title><button class="hide_button_style">TAILLE</button></mat-panel-title>
+                            <mat-panel-description>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <p>This is the primary content of the panel.</p>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title><button class="hide_button_style">PRIX</button></mat-panel-title>
+                            <mat-panel-description>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <p>This is the primary content of the panel.</p>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Prix min</mat-label>
+                            <input matInput [formControl]="minPriceFormControl" type="number" min="0">
+                          </mat-form-field>
+
+                          <mat-form-field appearance="fill">
+                            <mat-label>Prix max</mat-label>
+                            <input matInput [formControl]="maxPriceFormControl" type="number" max="10000">
+                          </mat-form-field>
+
+
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <button type="button" class="filter_button" (click)="filterPrice()">FILTRER</button>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-3 item_product" *ngFor="let product of data" (click)="getProductDetail(product)">
+            <div class="image_item">
+                <img src="./../../../../assets/images/f71e035ea433729339fd838e91dd9029bad1d13b_Q264H_1.avif" alt="">
+                <div class="ribbon">+ détails</div>
+            </div>
+            <p class="title_item">{{ product.title }}</p>
+            <p><span class="price">{{ product.price | currency }}</span><span class="code_ref"> - NEW MEUDIN W</span></p>
+            <p>{{ product.category }} - {{ product.subcategory }}</p>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@500&family=Montserrat:wght@300&family=Space+Grotesk:wght@500&display=swap');
+
+
+
+html, body { height: 100%; }
+
+
+* {
+    font-family: 'Lato',sans-serif;
+}
+
+body { margin: 0; font-family: 'Lato', sans-serif; }
+
+.hide_button_style {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+}

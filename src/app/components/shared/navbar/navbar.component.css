@@ -1,0 +1,102 @@
+
+
+nav {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.free_delivery {
+    height: 7vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 7vh;
+}
+
+.nav_bar {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px grey;
+    padding: 10px 0;
+    height: 15vh;
+}
+
+.nav_bar_left>* {
+    margin-left: 20px;
+}
+
+.nav_bar_left .a_logo {
+    margin-left: 35px;
+}
+
+img {
+    width: 100px;
+}
+
+.nav_bar_right>* {
+    margin-right: 30px;
+    color: black;
+}
+
+.nav_bar_right .a_cart_shopping {
+    margin-right: 100px;
+}
+
+/* SUBMENU SIDE NAV */
+.sub_menu_all {
+    position: relative;
+    background-color: white;
+    z-index: 2;
+}
+
+.sub_menu_item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 78vh;
+    background-color: white;
+}
+
+.sub_menu_item img {
+    width: 500px;
+}
+
+.sub_menu_item .sub_menu_links {
+    z-index: 99;
+    width: 600px;
+    padding-top: 100px;
+    padding-left: 200px;
+}
+
+.sub_menu_item .sub_menu_links a {
+    text-transform: uppercase;
+    font-family: 'latobold', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 1.5em;
+}
+
+.sub_menu_item .sub_menu_links p {
+    padding-bottom: 30px;
+}
+
+.close_sub_menu_link {
+    margin: 20px 50px 0 60px;
+    cursor: pointer;
+}
+
+.close_sub_menu_link i {
+    font-size: 35px;
+
+}
+
+
+/* LOGIN PART */
+.example-sidenav-content {
+}

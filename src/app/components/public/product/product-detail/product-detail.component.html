@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+    <div class="images_section col-7">
+        <img src="./../../../../assets/images/f71e035ea433729339fd838e91dd9029bad1d13b_Q264H_1.avif" alt="">
+    </div>
+
+    <div class="infos_section col-5">
+        <h2>{{ product.title }}</h2>
+        <p><span class="price">{{ product.price | currency }}</span><span class="code_ref"> - NEW MEUDIN W</span></p>
+        <mat-form-field appearance="fill">
+            <mat-label>Sélectionnez votre taille</mat-label>
+            <mat-select [(value)]="selectedSize">
+                <mat-option>None</mat-option>
+                <mat-option value="XS">XS</mat-option>
+                <mat-option value="S">S</mat-option>
+                <mat-option value="M">M</mat-option>
+                <mat-option value="L">L</mat-option>
+                <mat-option value="XL">XL</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Quantité</mat-label>
+                <input matInput [formControl]="numberStockFormControl" type="number" max="50">
+              </mat-form-field>
+            </div>
+
+        <button type="button" class="add_to_cart_button" (click)="addProductToCart()">AJOUTER AU PANIER</button>
+
+        <div *ngIf="resultBuying=='authentificationNeeded'" class="alert alert-warning" role="alert">Vous devez vous authentifier</div>
+        <div *ngIf="resultBuying=='productAdded'" class="alert alert-success" role="alert">Produit ajouté</div>
+
+    </div>
+
+</div>
+</div>

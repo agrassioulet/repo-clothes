@@ -1,0 +1,10 @@
+
+
+.add_to_cart_button {
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 70%;
+    height: 100px;
+    border: none;
+}

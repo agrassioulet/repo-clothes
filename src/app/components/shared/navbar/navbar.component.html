@@ -1,0 +1,111 @@
+<nav>
+    <p class="free_delivery">Livraison offerte dès 30€ en point relais & Retour offert sous 30j</p>
+
+    <div class="nav_bar">
+        <div class="nav_bar_left">
+            <a class="a_logo" href=""><img
+                    src="../../../../assets/images/kisspng-logo-phoenix-art-5afffc96c60439.6819225615267257828111.png"
+                    alt=""></a>
+            <a routerLink="" (click)="toggleNav('men')">Homme</a>
+            <a routerLink="" (click)="toggleNav('women')">Femme</a>
+            <a routerLink="" (click)="toggleNav('children')">Enfant</a>
+            <a routerLink="" (click)="toggleNav('boots')">Bottes</a>
+            <a routerLink="" (click)="toggleNav('outerwear')">Vêtements d'extérieur</a>
+            <a routerLink=""><i class="fa-solid fa-magnifying-glass"></i></a>
+
+
+        </div>
+        <div class="nav_bar_right">
+            <a routerLink="">La marque</a>
+            <a routerLink=""><i class="fa-solid fa-location-dot"></i></a>
+            <a routerLink="" (click)="togglePanel=!togglePanel"><i class="fa-solid fa-user"></i></a>
+            {{togglePanel}}
+            <span>|</span>
+            <a routerLink="/cart" class="a_cart_shopping"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </div>
+
+
+    <div class="sub_menu_all" id="sub_menu_all">
+        <div class="sub_menu_item d-flex" *ngIf="submenu == 'men'">
+            <div class="sub_menu_links">
+                <p><a routerLink="/product-list/men/all" (click)="toggleNav('')">Vêtements</a></p>
+                <p><a routerLink="/product-list/men/boots" (click)="toggleNav('')">Bottes</a></p>
+                <p><a routerLink="/product-list/men/shoes" (click)="toggleNav('')">Chaussures</a></p>
+                <p><a routerLink="/product-list/men/accessories" (click)="toggleNav('')">Accessoires</a></p>
+                <p><a routerLink="/product-list/men/see-all" (click)="toggleNav('')">Voir tout</a></p>
+                <p><a routerLink="/product-list/men/garden" (click)="toggleNav('')">Au jardin !</a></p>
+            </div>
+
+            <img src="../../../../assets/images/mgm_pe22_desktop_homme.avif" alt="">
+
+            <a class="close_sub_menu_link" (click)="toggleNav('')"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+
+        <div class="sub_menu_item d-flex" *ngIf="submenu == 'women'">
+            <div class="sub_menu_links">
+                <p><a routerLink="/product-list/women/all" (click)="toggleNav('')">Vêtements</a></p>
+                <p><a routerLink="/product-list/women/boots" (click)="toggleNav('')">Bottes</a></p>
+                <p><a routerLink="/product-list/women/shoes" (click)="toggleNav('')">Chaussures</a></p>
+                <p><a routerLink="/product-list/women/accessories" (click)="toggleNav('')">Accessoires</a></p>
+                <p><a routerLink="/product-list/women/see-all" (click)="toggleNav('')">Voir tout</a></p>
+                <p><a routerLink="/product-list/women/garden" (click)="toggleNav('')">Au jardin !</a></p>
+            </div>
+
+            <img src="../../../../assets/images/products/women/mgm_pe22_desktop_femme.avif" alt="">
+
+            <a class="close_sub_menu_link" (click)="toggleNav('')"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+
+
+        <div class="sub_menu_item d-flex" *ngIf="submenu == 'outerwear'">
+            <div class="sub_menu_links">
+                <p><a routerLink="/product-list/outerwear/all">Best-sellers</a></p>
+                <p><a routerLink="/product-list/outerwear/all">Parkas</a></p>
+                <p><a routerLink="/product-list/outerwear/all">Trenchs</a></p>
+                <p><a routerLink="/product-list/outerwear/all">Vestes & Blousons</a></p>
+                <p><a routerLink="/product-list/outerwear/all">Voir tout</a></p>
+                <p><a routerLink="/product-list/outerwear/all">Aimez la pluie</a></p>
+            </div>
+
+            <img src="../../../../assets/images/nav/mgm_pe22_desktop_vetements_exterieurs.avif" alt="">
+
+            <a class="close_sub_menu_link" (click)="toggleNav('')"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+
+
+        <div class="sub_menu_item d-flex" *ngIf="submenu == 'children'">
+            <div class="sub_menu_links">
+                <p><a routerLink="/product-list/children/all">Vêtements</a></p>
+                <p><a routerLink="/product-list/children/all">Bottes</a></p>
+                <p><a routerLink="/product-list/children/all">Accessoires</a></p>
+                <p><a routerLink="/product-list/children/all">Voir tout</a></p>
+            </div>
+
+            <img src="../../../../assets/images/nav/mgm_pe22_desktop_enfant.avif" alt="">
+
+            <a class="close_sub_menu_link" (click)="toggleNav('')"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+
+
+        <div class="sub_menu_item d-flex" *ngIf="submenu == 'boots'">
+            <div class="sub_menu_links">
+                <p><a routerLink="/product-list/boots/all">Homme</a></p>
+                <p><a routerLink="/product-list/boots/all">Femme</a></p>
+                <p><a routerLink="/product-list/boots/all">Enfant</a></p>
+                <p><a routerLink="/product-list/boots/all">Made in France</a></p>
+                <p><a routerLink="/product-list/boots/all">Savoir-faire </a></p>
+                <p><a routerLink="/product-list/boots/all">Les iconiques</a></p>
+            </div>
+
+            <img src="../../../../assets/images/nav/mgm_ah21_desktop_bottes.avif" alt="">
+
+            <a class="close_sub_menu_link" (click)="toggleNav('')"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+    </div>
+</nav>
+
+<h1 *ngIf="auth.isUserLogin()">Vous êtes connecté - {{ this.auth.getUsername() }}</h1>
+<h1 *ngIf="!auth.isUserLogin()">Vous êtes déconnecté</h1>
+
+<app-login-panel [activePane]="'right'" [_togglePanel]="togglePanel"></app-login-panel>

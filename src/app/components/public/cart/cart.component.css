@@ -1,0 +1,71 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700;900&display=swap'); */
+
+.cart_container {
+    display: flex;
+}
+
+.left_part {
+    background-color: #F4F4F4;
+    padding-left: 12%;
+    padding-right: 3%;
+    flex-grow: 1;
+}
+
+.right_part {
+    width: 400px;
+}
+
+.items {
+    background-color: white;
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+
+}
+
+.cart_container .items .item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    padding-top: 40px;
+    height: 275px;
+    border-bottom: solid 1px grey;
+}
+
+.left_part_item {
+    display: flex;
+}
+
+.cart_container .items .item  img {
+    height: 100%;
+    width: 150px;
+}
+
+.item_properties {
+    margin-left: 50px;
+}
+
+.cart_container .item_properties .title_property {
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 15px;
+}
+
+.item_properties p {
+    margin: 10px 0;
+}
+
+
+.item_property {
+    color: grey;
+}
+
+.item_value {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.more_vert_actions {
+    background-color: transparent;
+    border: none;
+}

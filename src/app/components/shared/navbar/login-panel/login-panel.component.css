@@ -1,0 +1,27 @@
+#login_panel {
+    position: fixed;
+    background-color: white;
+    width: 50vw;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    transition-property: right;
+    transition-duration: 0.5s;
+    z-index: 99;
+    padding-left: 2vw;
+    padding-top: 30px;
+}
+
+#login_panel h2 {
+    text-align: center;
+}
+
+#login_panel .connect_button {
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 70%;
+    height: 100px;
+    border: none;
+}
