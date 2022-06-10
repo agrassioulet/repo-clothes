@@ -1,27 +1,36 @@
 <div class="cart_container">
-
-
     <div class="left_part">
 
-        <h2>VOTRE PANIER</h2>
-
-        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-            <mat-button-toggle value="bold">Bold</mat-button-toggle>
-            <mat-button-toggle value="italic">Italic</mat-button-toggle>
-            <mat-button-toggle value="underline">Underline</mat-button-toggle>
-        </mat-button-toggle-group>
+        <h2>PANIER</h2>
 
         <div class="items">
-            <div class="item">
+            <div class="item" *ngFor="let productCart of cart">
 
                 <div class="left_part_item">
                     <img src="./../../../assets/images/5c0b329d792b3bf8f647532366eb06184f6b9efb_Q8282_1.avif" alt="">
 
                     <div class="item_properties">
-                        <h3 class="title_property">Chaussures de marche et de loisirs éco-responsables</h3>
+                        <h3 class="title_property">{{ productCart.id_product.title }}</h3>
                         <p><span class="item_property">Couleur : </span> <span class="item_value">TERRE</span></p>
-                        <p><span class="item_property">Taille : </span> <span class="item_value">40</span></p>
-                        <p><span class="item_property">Quantité : </span> <span class="item_value">2</span></p>
+                        <p><span class="item_property">Taille : </span> <span class="item_value">
+
+                            <select class="size_select" [formControl]="selectFormControl">
+                                <option selected>40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                              </select>
+
+                        </span></p>
+                        <p><span class="item_property">Prix : </span> <span
+                                class="item_value">{{productCart.id_product.price | currency: 'EUR'}}</span></p>
+                        <p><span class="item_property">Quantité : </span>
+                            <span class="less_quantity_action"><i (click)="decreaseQuantity(productCart)" 
+                                class="fa-solid fa-minus"></i></span>
+                            <span class="item_value">{{productCart.quantity}}</span>
+                            <span class="plus_quantity_action"><i (click)="increaseQuantity(productCart)" 
+                                class="fa-solid fa-plus"></i></span>
+                        </p>
                     </div>
 
                 </div>
@@ -30,7 +39,7 @@
                     <div class="actions">
                         <button mat-icon-button [matMenuTriggerFor]="menuActions" class="more_vert_actions">
                             <mat-icon>more_vert</mat-icon>
-                          </button>
+                        </button>
                         <mat-menu #menuActions="matMenu">
                             <button mat-menu-item>
                                 <mat-icon>delete</mat-icon>
@@ -41,34 +50,14 @@
                                 <span>Modifier</span>
                             </button>
                         </mat-menu>
-
-
-                        <p class="price">56,00 €</p>
                     </div>
                 </div>
 
 
             </div>
 
-            <div class="item">
-
-                <img src="./../../../assets/images/5c0b329d792b3bf8f647532366eb06184f6b9efb_Q8282_1.avif" alt="">
 
 
-            </div>
-
-            <div class="item">
-
-                <img src="./../../../assets/images/5c0b329d792b3bf8f647532366eb06184f6b9efb_Q8282_1.avif" alt="">
-
-                <p>fefeef</p>
-                <p>fefeef</p>
-                <p>fefeef</p>
-                <p>fefeef</p>
-                <p>fefeef</p>
-
-
-            </div>
         </div>
 
 
@@ -78,6 +67,39 @@
 
 
     <div class="right_part">
+
+        <h2 class="title">Récapitulatif</h2>
+
+        <div class="code_promo">
+            <input class="code_promo_input" type="text" placeholder="Code promo">
+            <button type="button" class="apply_promo_button">APPLIQUER</button>
+        </div>
+
+        <div class="block1">
+            <div class="subtotal">
+                <span class="subtotal_title">SOUS-TOTAL</span>
+                <span class="subtotal_value">1 922,00 €</span>
+            </div>
+
+            <div class="delivery">
+                <span class="delivery_title">LIVRAISON</span>
+                <span class="delivery_value">Offert</span>
+            </div>
+        </div>
+
+        <div class="delivery_offer">
+            <div class="delivery_offer_icon"><i class="fa-solid fa-truck"></i></div>
+            <mat-accordion class="delivery_offer_panel">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Livraison offerte dès 30€ en point relais</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+
 
     </div>
 

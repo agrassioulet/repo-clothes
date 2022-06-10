@@ -31,8 +31,12 @@ export class ProductService {
     return this.httpClient.post<void>(this.url + "/addProductToCart", { id_product: product._id, quantity: quantity })
   }
 
-  public getProductsForCart() {
-    return this.httpClient.get<any>(this.url + "/getProductsForCart");
+  public getCart() {
+    return this.httpClient.get<any>(this.url + "/getCart");
+  }
+
+  public updateProductCart(productCart: any) {
+    return this.httpClient.post<any>(this.url + "/updateProductCart", productCart);
   }
 
 }

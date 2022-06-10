@@ -1,0 +1,12 @@
+.delivery_payment_container {
+    background-color: #F4F4F4;
+}
+
+.delivery_payment_container h3 {
+    text-transform: uppercase;
+}
+
+.user_infos_block, .delivery_mode_block, .who_and_where_delivery_block, .payment_block {
+    background-color: white;
+    margin: 20px 0;
+}

@@ -14,7 +14,6 @@ export class AuthService {
   }
 
   getUsername() {
-    console.log("in getusername",this.getUserDetails())
     let userdetail: any = this.getUserDetails()
     if(typeof userdetail === 'string')
       return JSON.parse(userdetail)?.username ?? ''

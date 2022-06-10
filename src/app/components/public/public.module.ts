@@ -21,6 +21,7 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { PublicRoutingModule } from './public-routing.module';
 import { CartComponent } from './cart/cart.component';
+import { DeliveryPaymentComponent } from './delivery-payment/delivery-payment.component';
 
 
 const Material = [
@@ -37,7 +38,7 @@ const Material = [
 
 @NgModule({
   declarations: [
-    ProductListComponent, ProductDetailComponent, CartComponent
+    ProductListComponent, ProductDetailComponent, CartComponent, DeliveryPaymentComponent
   ],
   imports: [PublicRoutingModule
     ,ReactiveFormsModule,CommonModule,FormsModule,NgbModule,FontAwesomeModule,

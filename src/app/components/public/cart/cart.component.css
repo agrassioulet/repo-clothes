@@ -1,5 +1,10 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700;900&display=swap'); */
 
+footer {
+    background-color: #F4F4F4;
+}
+
+
 .cart_container {
     display: flex;
 }
@@ -12,7 +17,7 @@
 }
 
 .right_part {
-    width: 400px;
+    width: 450px;
 }
 
 .items {
@@ -30,6 +35,12 @@
     padding-top: 40px;
     height: 275px;
     border-bottom: solid 1px grey;
+}
+
+.plus_quantity_action, .less_quantity_action {
+    font-size: 1em;
+    margin: 0 5px;
+    cursor: pointer;
 }
 
 .left_part_item {
@@ -66,6 +77,103 @@
 }
 
 .more_vert_actions {
+    background-color: transparent;
+    border: none;
+}
+
+
+/* RIGHT PART SUMMARY */
+
+.cart_container > .right_part {
+    padding: 40px 30px 15px 30px;
+}
+
+.cart_container > .right_part > .title {
+    border-bottom: solid 1px grey;
+    text-transform: uppercase;
+}
+
+.code_promo {
+    display: flex;
+    align-items: flex-end;
+}
+
+.apply_promo_button {
+    flex-grow: 1;
+    background-color: white;
+    border: solid 1px red;
+    box-shadow: none;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.code_promo_input {
+    flex-grow: 3;
+    height: 40px;
+}
+
+.block1 {
+    font-size: 1.2em;
+    padding: 40px 0;
+    border-bottom: 1px solid grey;
+}
+
+.subtotal_title, .delivery_title {
+    text-transform: uppercase;
+    color: grey;
+}
+
+.subtotal {
+    margin-bottom: 10px;
+}
+
+.subtotal, .delivery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart_container > .right_part .mat-accordion, 
+.cart_container > .right_part .mat-expansion-panel {
+    border: none;
+    box-shadow: none;
+}
+
+.cart_container > .right_part .mat-accordion:hover, 
+.cart_container > .right_part .mat-expansion-panel:hover,
+.cart_container > .right_part .mat-expansion-panel-header:hover {
+    background-color: white;
+}
+
+.cart_container > .right_part .mat-expansion-panel-header {
+    padding-left: 0;
+}
+
+.delivery_offer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.delivery_offer_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+}
+
+.delivery_offer_icon i {
+    font-size: 2em;
+}
+
+.delivery_offer_panel {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    height: 60px;
+}
+
+.size_select {
     background-color: transparent;
     border: none;
 }
