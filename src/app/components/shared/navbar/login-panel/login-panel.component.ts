@@ -64,7 +64,7 @@ export class LoginPanelComponent implements OnInit, OnChanges {
     if (this.loginFormControl.valid && this.passwordFormControl.valid) {
       console.log("postTypeRequest")
       this._api.postTypeRequest('user/login', {
-        username: this.loginFormControl.value,
+        login: this.loginFormControl.value,
         password: this.passwordFormControl.value
 
       }).subscribe((res: any) => {
@@ -89,10 +89,8 @@ export class LoginPanelComponent implements OnInit, OnChanges {
     if (this.loginFormControl.valid && this.passwordFormControl.valid) {
       console.log("postTypeRequest : register")
       this._api.postTypeRequest('user/register', {
-        username: this.loginFormControl.value,
+        login: this.loginFormControl.value,
         password: this.passwordFormControl.value,
-        email: this.emailFormControl.value,
-
       }).subscribe((res: any) => {
         // Si la connexion a pu s'établir
         if (res.status && res.status == 1) {
@@ -100,7 +98,6 @@ export class LoginPanelComponent implements OnInit, OnChanges {
           this._auth.setDataInLocalStorage('userData', JSON.stringify(res.data));
           this._auth.setDataInLocalStorage('token', res.token);
           this.message = 'Vous êtes connecté'
-          //this._router.navigate(['']);
         }// sinon
         else {
           this.message = "L'inscription a échouée"

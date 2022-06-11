@@ -1,0 +1,30 @@
+.user_infos_container {
+    background-color: #F4F4F4;
+    overflow: hidden;
+}
+
+.user_infos_container h3,
+.user_infos_container h2 {
+
+    text-transform: uppercase;
+}
+
+.user_infos_block
+{
+    background-color: white;
+    margin: 20px 0;
+    padding: 50px;
+}
+
+.save_user_infos_btn  {
+    transition-property: all;
+    transition-duration: 0.2s;
+    color: black;
+    background-color: white;
+    border: solid 1px black;
+    padding: 15px;
+}
+
+.save_user_infos_btn:hover {
+    background-color: #FAFAFA;
+}

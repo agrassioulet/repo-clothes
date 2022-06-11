@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IProduct, Product } from 'src/app/_models/product';
 import { ProductService } from 'src/app/_services/product.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { ProductService } from 'src/app/_services/product.service';
 export class ProductListComponent implements OnInit {
   panelOpenState = false;
   hideSortByMenu: boolean = true
-  data: any;
+  data: Product[] = [];
   category: string;
 
   minPriceFormControl = new FormControl('', [Validators.required, Validators.pattern('[0-9]*')]);
@@ -22,14 +23,15 @@ export class ProductListComponent implements OnInit {
     private productService: ProductService,
     private router: Router
   ) {
-    var category = activatedRoute.snapshot.paramMap.get("category")
+    var category = this.activatedRoute.snapshot.paramMap.get("category")
     this.category = category ?? ""
-    console.log("category : ", category)
   }
 
   ngOnInit(): void {
     this.productService.getProductsByCategory(this.category).subscribe(result => {
+      console.log(result)
       this.data = result
+      console.log(this.data)
     })
   }
 
@@ -38,7 +40,6 @@ export class ProductListComponent implements OnInit {
     if (element != null) {
       element.style.right = "0"
     }
-
   }
 
   closeFilterSideWindow() {
@@ -55,10 +56,11 @@ export class ProductListComponent implements OnInit {
   filterPrice() {
     this.productService.getProductsByCategory(this.category).subscribe(result => {
       this.data = result.filter(
-        (product: any) => product.price >= this.minPriceFormControl.value 
+        (product: Product) => product.price >= this.minPriceFormControl.value 
         &&  product.price <= this.maxPriceFormControl.value
         )
     })
+    console.log("data", this.data)
   }
 
 }

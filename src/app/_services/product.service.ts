@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IProduct } from '../_models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class ProductService {
   }
 
   public getAllProducts() {
-    return this.httpClient.get(this.url);
+    return this.httpClient.get<IProduct[]>(this.url);
   }
 
   public getProductById(id: string): Observable<any> {

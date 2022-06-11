@@ -5,9 +5,15 @@ footer {
 .myfooter {
     margin: 0 auto;
     font-family: 'Lato', sans-serif;
-    font-size: 0.9em;
-    color: grey;
-    
+    font-size: 0.9em;    
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline !important;
 }
 
 .item_footer_part1 {
@@ -41,9 +47,14 @@ input {
 button {
     border: none;
     background-color: black;
-    color: white;
+    color: white !important;
     height: 100%;
     width: 15%;
+}
+
+input:focus-visible, input:focus, input:focus {
+    border: solid 1px black;
+    outline: none;
 }
 
 
@@ -94,9 +105,4 @@ button {
 .footer_part2 p {
 text-align: center;
 margin: 10px 0;
-}
-
-#copyright_footer {
-    margin-top: 40px;
-    margin-bottom: 40px;
 }

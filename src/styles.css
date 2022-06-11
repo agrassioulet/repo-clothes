@@ -8,9 +8,14 @@ html, body { height: 100%; }
 
 * {
     font-family: 'Lato',sans-serif;
+    font-weight: 400;
+    text-decoration: none !important;
+    color: black;
 }
 
-body { margin: 0; font-family: 'Lato', sans-serif; }
+body { 
+    margin: 0; 
+}
 
 .hide_button_style {
     background-color: transparent;
@@ -44,4 +49,8 @@ body { margin: 0; font-family: 'Lato', sans-serif; }
 
 .font-size-7 {
     font-size: 2.2em;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

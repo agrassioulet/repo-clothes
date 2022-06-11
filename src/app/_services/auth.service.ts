@@ -13,10 +13,10 @@ export class AuthService {
     }
   }
 
-  getUsername() {
+  getLogin() {
     let userdetail: any = this.getUserDetails()
     if(typeof userdetail === 'string')
-      return JSON.parse(userdetail)?.username ?? ''
+      return JSON.parse(userdetail)?.login ?? ''
     else
       return ''
   }

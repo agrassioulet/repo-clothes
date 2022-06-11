@@ -7,10 +7,14 @@ import { DeliveryPaymentComponent } from './delivery-payment/delivery-payment.co
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
+import { UserInfosComponent } from './user-infos/user-infos.component';
 
 const routes: Routes = [
     {
         path: '', component: HomeComponent
+    },
+    {
+        path:'user-infos', component: UserInfosComponent
     },
     {
         path:'cart', component: CartComponent
