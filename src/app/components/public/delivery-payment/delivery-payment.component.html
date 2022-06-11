@@ -1,4 +1,4 @@
-<div class="delivery_payment_container">
+<div class="delivery_payment_container pt-4">
 
     <div class="container">
         <h2>LIVRAISON & PAIEMENT</h2>
@@ -6,59 +6,118 @@
         <div class="user_infos_block">
             <h3>Vos informations</h3>
             <p>Monsieur Alexandre Grassioulet</p>
-            <p>alxndr68@gmail.com</p>
+            <p><span>Email : </span>alxndr68@gmail.com</p>
         </div>
 
 
         <div class="delivery_mode_block">
             <h3>Livraison</h3>
             <div class="mondial_relay_delivery">
-                <p>Livraison en Mondial Relay Offert</p>
-                <p>Date de livraison estimée le lundi 20 juin</p>
-                <p>Offert</p>
+                <div class="checkbox_container"><input type="checkbox"></div>
+                <div class="text_container">
+                    <h3 class="text-dark my-0">Livraison en Mondial Relay Offert</h3>
+                    <h5 class="mb-0 text-muted">Date de livraison estimée le lundi 20 juin</h5>
+                </div>
+                <p class="price_container">Offert</p>
             </div>
-            <div class="colissimo_delivery">
-                <p>Livraison à domicile Colissimo</p>
-                <p>Date de livraison estimée le samedi 18 juin</p>
-                <p>4,95 € </p>
+
+            <div class="colissimo_delivery mt-4">
+                <div class="checkbox_container"><input type="checkbox"></div>
+                <div class="text_container">
+                    <h3 class="text-dark my-0">Livraison à domicile Colissimo</h3>
+                    <h5 class="mb-0 text-muted">Date de livraison estimée le samedi 18 juin</h5>
+                </div>
+                <p class="price_container">4,95 €</p>
             </div>
         </div>
 
         <div class="who_and_where_delivery_block">
             <div class="delivery_picked_up_by_block">
-                <h3>Colis retiré par :</h3>
-                <div class="civility">
-                    <span>Civilité *</span>
+                <h2>Colis retiré par :</h2>
+
+                <div class="d-flex">
+                    <h3 class="my-0 mr-4 mb-2">Civilité : </h3>
+                    <mat-radio-group aria-label="Select an option" class="pt-1">
+                        <mat-radio-button value="1" class="mx-3">Madame</mat-radio-button>
+                        <mat-radio-button value="2" class="mx-3">Monsieur</mat-radio-button>
+                    </mat-radio-group>
                 </div>
-                <div><input type="text" placeholder="Nom"></div>
-                <div><input type="text" placeholder="Prénom"></div>
+
+                <form>
+                    <div class="form-group d-flex align-items-center mb-2">
+                        <label style="width:100px;" for="InputLastName" class="">Nom</label>
+                        <input style="width:50%;" type="text" class="form-control mx-3" id="InputLastName"
+                            placeholder="Saisir le nom">
+                    </div>
+                    <div class="form-group d-flex align-items-center">
+                        <label style="width:100px;" for="InputFirstName">Prénom</label>
+                        <input style="width:50%;" type="text" class="form-control mx-3" id="InputFirstName"
+                            placeholder="Saisir le prénom">
+                    </div>
+                </form>
             </div>
 
-            <div class="choice_of_pick_up_point_block">
-                <h3>Choix du point de retrait</h3>
+            <div class="choice_of_pick_up_point_block mt-4">
+                <h2>Choix du point de retrait</h2>
                 <p>Saisissez votre code postal ou géolocalisez-vous :</p>
-                <div>
-                    <input type="text" placeholder="Code postal">
-                    <button>RECHERCHER</button>
-                    <i class="fa-solid fa-location-dot"></i>
+                <div class="d-flex align-items-center">
+                    <input style="width:50%;" type="text" class="form-control" id="InputPostalCode">
+                    <button type="button" class="btn btn-dark mx-3">RECHERCHER</button>
+                    <i class="ml-3 font-size-3 fa-solid fa-location-dot"></i>
                 </div>
             </div>
         </div>
 
 
-
         <div class="payment_block">
-            <h3>Livraison</h3>
-            <div class="mondial_relay_delivery">
-                <p>Livraison en Mondial Relay Offert</p>
-                <p>Date de livraison estimée le lundi 20 juin</p>
-                <p>Offert</p>
+            <h2>PAIEMENT</h2>
+
+            <div class="d-flex">
+                <h3 class="my-0 mr-4 mb-2">Civilité : </h3>
+                <mat-radio-group aria-label="Select an option" class="pt-1">
+                    <mat-radio-button value="1" class="mx-3">Madame</mat-radio-button>
+                    <mat-radio-button value="2" class="mx-3">Monsieur</mat-radio-button>
+                </mat-radio-group>
             </div>
-            <div class="colissimo_delivery">
-                <p>Livraison à domicile Colissimo</p>
-                <p>Date de livraison estimée le samedi 18 juin</p>
-                <p>4,95 € </p>
-            </div>
+
+            <form>
+                <div class="form-group d-flex align-items-center mb-2">
+                    <label style="width:100px;" for="InputLastNamePaymentBlock" class="">Nom</label>
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputLastNamePaymentBlock"
+                        placeholder="Saisir le nom">
+                </div>
+                <div class="form-group d-flex align-items-center mb-2">
+                    <label style="width:100px;" for="InputFirstNamePaymentBlock">Prénom</label>
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputFirstNamePaymentBlock"
+                        placeholder="Saisir le prénom">
+                </div>
+
+                <div class="form-group d-flex align-items-center mb-2">
+                    <label style="width:100px;" for="InputAdressPaymentBlock">Adresse</label>
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputAdressPaymentBlock">
+                </div>
+
+                <div class="form-group d-flex align-items-center mb-2">
+                    <label style="width:100px;" for="InputPostalCodePaymentBlock">Code postal</label>
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputPostalCodePaymentBlock">
+                </div>
+
+                <div class="form-group d-flex align-items-center mb-2">
+                    <label style="width:100px;" for="InputCityPaymentBlock">Ville</label>
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputCityPaymentBlock">
+                </div>
+
+                <select class="form-select form-select-sm mb-3">
+                    <option selected>France</option>
+                    <option value="1">Belgique</option>
+                    <option value="2">Italie</option>
+                    <option value="3">Espagne</option>
+                </select>
+
+                <button type="button" class="validate_payment_block btn">VALIDER</button>
+
+
+            </form>
         </div>
 
     </div>

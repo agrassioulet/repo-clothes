@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
       // OPEN SUBMENU
       if (str != '') {
         sub_menu.style.display="block"
-        content.style.filter="grayscale(1)"
+        content.style.backgroundColor="green !important;"
         this.auth.getUserDetails() 
       }
       // CLOSE SUBMENU

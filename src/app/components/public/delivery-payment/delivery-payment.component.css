@@ -2,11 +2,65 @@
     background-color: #F4F4F4;
 }
 
-.delivery_payment_container h3 {
+.delivery_payment_container h3,
+.delivery_payment_container h2 {
+
     text-transform: uppercase;
 }
 
-.user_infos_block, .delivery_mode_block, .who_and_where_delivery_block, .payment_block {
+.user_infos_block,
+.delivery_mode_block,
+.who_and_where_delivery_block,
+.payment_block {
     background-color: white;
     margin: 20px 0;
+    padding: 50px;
+}
+
+
+.mondial_relay_delivery,
+.colissimo_delivery {
+    background-color: grey;
+    padding: 10px 15px;
+    background-color: #FAFAFA;
+    display: flex;
+}
+
+.checkbox_container {
+    width: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkbox_container input {
+    width: 20px;
+    height: 20px;
+}
+
+
+.text_container {
+    flex-grow: 1;
+}
+
+.price_container {
+    width: 100px;
+}
+
+.price_container {
+    width: 100px;
+    text-align: right;
+}
+
+.validate_payment_block {
+    transition-property: all;
+    transition-duration: 0.2s;
+    color: black;
+    background-color: white;
+    border: solid 1px black;
+    padding: 15px;
+}
+
+.validate_payment_block:hover {
+    background-color: #FAFAFA;
 }

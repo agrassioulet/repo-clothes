@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
-
+import {MatRadioModule} from '@angular/material/radio'; 
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -22,6 +22,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { PublicRoutingModule } from './public-routing.module';
 import { CartComponent } from './cart/cart.component';
 import { DeliveryPaymentComponent } from './delivery-payment/delivery-payment.component';
+import { ConfirmationOrderComponent } from './confirmation-order/confirmation-order.component';
 
 
 const Material = [
@@ -32,13 +33,14 @@ const Material = [
   MatSelectModule,
   MatInputModule,
   MatButtonToggleModule,
-  MatIconModule
+  MatIconModule,
+  MatRadioModule
 ]
 
 
 @NgModule({
   declarations: [
-    ProductListComponent, ProductDetailComponent, CartComponent, DeliveryPaymentComponent
+    ProductListComponent, ProductDetailComponent, CartComponent, DeliveryPaymentComponent, ConfirmationOrderComponent
   ],
   imports: [PublicRoutingModule
     ,ReactiveFormsModule,CommonModule,FormsModule,NgbModule,FontAwesomeModule,

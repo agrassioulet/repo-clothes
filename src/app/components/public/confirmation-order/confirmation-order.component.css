@@ -1,0 +1,17 @@
+.confirmation_order_container {
+    background-color: #F4F4F4;
+    overflow: hidden;
+}
+
+.confirmation_order_container h3,
+.confirmation_order_container h2 {
+
+    text-transform: uppercase;
+}
+
+
+.confirmation_order_block {
+    background-color: white;
+    margin: 20px 0;
+    padding: 50px;
+}
