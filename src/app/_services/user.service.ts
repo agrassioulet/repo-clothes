@@ -15,8 +15,11 @@ export class UserService {
 
 
   public getUserInfos() {
-    return this.httpClient.get<IUser>(this.url + "/get-user-infos");
+    return this.httpClient.get<{status: string, data: any}>(this.url + "/get-user-infos");
   }
 
+  public saveUserInfos(user: IUser) {
+    return this.httpClient.post<{status: number, data: any, token: string}>(this.url + "/save-user-infos", user );
+  }
 
 }

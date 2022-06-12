@@ -16,7 +16,7 @@
     padding: 50px;
 }
 
-.save_user_infos_btn  {
+.save_user_infos_btn, .back_btn  {
     transition-property: all;
     transition-duration: 0.2s;
     color: black;
@@ -25,6 +25,11 @@
     padding: 15px;
 }
 
-.save_user_infos_btn:hover {
+.save_user_infos_btn:hover, .back_btn:hover {
     background-color: #FAFAFA;
+}
+
+
+.feedback {
+    color: red;
 }

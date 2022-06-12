@@ -1,4 +1,5 @@
 export class User implements IUser {
+
     public firstname!: string;
     public lastname!: string;
     public dateOfBirth!: string;
@@ -14,8 +15,18 @@ export class User implements IUser {
 
     constructor() { }
 
-    getFullAdress() : string {
-        return this.adress + ' ' + this.postalCode + ' ' + this.city
+    public static initUser() {
+        return {
+            firstname: '',
+            lastname: '',
+            dateOfBirth: '',
+            postalCode: '',
+            city: '',
+            adress: '',
+            email: '',
+            login: '',
+            password: ''
+        }
     }
 
 }

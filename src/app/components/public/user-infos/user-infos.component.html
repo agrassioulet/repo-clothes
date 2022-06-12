@@ -6,38 +6,56 @@
 
             <h2>MES INFORMATIONS DE COMPTE</h2>
 
-            <form>
+            <form [formGroup]="userForm" #form="ngForm">
                 <div class="form-group d-flex align-items-center mb-2">
                     <label style="width:100px;" for="InputLastNameUserInfos" class="">Identifiant</label>
-                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputLoginUserInfos">
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputLoginUserInfos"
+                        [(ngModel)]="user.login" formControlName="login">
                 </div>
+
                 <div class="form-group d-flex align-items-center mb-2">
-                    <label style="width:100px;" for="InputFirstNameUserInfos">Password</label>
-                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputPasswordUserInfos">
+                    <label style="width:100px;" for="InputFirstNameUserInfos">Prénom</label>
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputFirstNameUserInfos"
+                        [(ngModel)]="user.firstname" formControlName="firstname">
                 </div>
 
                 <div class="form-group d-flex align-items-center mb-2">
                     <label style="width:100px;" for="InputLastNameUserInfos" class="">Nom</label>
-                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputLastNameUserInfos">
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputLastNameUserInfos"
+                        [(ngModel)]="user.lastname" formControlName="lastname">
                 </div>
+
                 <div class="form-group d-flex align-items-center mb-2">
-                    <label style="width:100px;" for="InputFirstNameUserInfos">Prénom</label>
-                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputFirstNameUserInfos">
+                    <label style="width:100px;" for="InputLastNameUserInfos" class="">Date de naissance</label>
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputLastNameUserInfos"
+                        [(ngModel)]="user.dateOfBirth" formControlName="dateOfBirth">
+                </div>
+
+                <div class="form-group d-flex align-items-center mb-2">
+                    <label style="width:100px;" for="InputLastNameUserInfos" class="">Email</label>
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputLastNameUserInfos"
+                        [(ngModel)]="user.email" formControlName="email">
+                        <div *ngIf="f.get('email')?.invalid && form.touched" class="feedback">
+                            Email invalide
+                        </div>
                 </div>
 
                 <div class="form-group d-flex align-items-center mb-2">
                     <label style="width:100px;" for="InputAdressUserInfos">Adresse</label>
-                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputAdressUserInfos">
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputAdressUserInfos"
+                        [(ngModel)]="user.adress" formControlName="adress">
                 </div>
 
                 <div class="form-group d-flex align-items-center mb-2">
                     <label style="width:100px;" for="InputPostalCodeUserInfos">Code postal</label>
-                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputPostalCodeUserInfos">
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputPostalCodeUserInfos"
+                        [(ngModel)]="user.postalCode" formControlName="postalCode">
                 </div>
 
                 <div class="form-group d-flex align-items-center mb-2">
                     <label style="width:100px;" for="InputCityUserInfos">Ville</label>
-                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputCityUserInfos">
+                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputCityUserInfos"
+                        [(ngModel)]="user.city" formControlName="city">
                 </div>
 
                 <div class="d-flex">
@@ -50,7 +68,13 @@
                     </select>
                 </div>
 
-                <button type="button" class="save_user_infos_btn btn">ENREGISTRER</button>
+                <button type="button" class="save_user_infos_btn btn mx-2"
+                    (click)="saveUserInfos()" [disabled]="!userForm.valid">ENREGISTRER</button>
+                <button type="button" class="back_btn btn" routerLink="">RETOUR</button>
+
+                <div *ngIf="isSaved" class="alert alert-success" role="alert">
+                    Utilisateur mis à jour</div>
+
             </form>
 
         </div>
