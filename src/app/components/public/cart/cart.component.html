@@ -1,5 +1,5 @@
 <div class="cart_container">
-    <div class="left_part">
+    <div class="left_part py-3">
 
         <h2>PANIER</h2>
 
@@ -41,7 +41,7 @@
                             <mat-icon>more_vert</mat-icon>
                         </button>
                         <mat-menu #menuActions="matMenu">
-                            <button mat-menu-item>
+                            <button mat-menu-item (click)="deleteProductCart(productCart)">
                                 <mat-icon>delete</mat-icon>
                                 <span>Supprimer</span>
                             </button>
@@ -52,13 +52,11 @@
                         </mat-menu>
                     </div>
                 </div>
-
-
             </div>
-
-
-
         </div>
+
+        <button type="button" class="order_btn btn my-3"
+            (click)="order()" *ngIf="auth.isUserLogin()">COMMANDER</button>
 
 
 

@@ -28,16 +28,17 @@ export class ProductService {
     return this.httpClient.post<void>(this.url, product)
   }
 
-  public addProductToCart(product: any, quantity: number) {
-    return this.httpClient.post<void>(this.url + "/addProductToCart", { id_product: product._id, quantity: quantity })
+  public addProductToCart(product: IProduct, quantity: number) {
+    return this.httpClient.post<{status: number, data: any}>(this.url + "/add-product-to-cart", 
+    { id_product: product._id, quantity: quantity })
   }
 
   public getCart() {
-    return this.httpClient.get<any>(this.url + "/getCart");
+    return this.httpClient.get<any>(this.url + "/get-cart");
   }
 
   public updateProductCart(productCart: any) {
-    return this.httpClient.post<any>(this.url + "/updateProductCart", productCart);
+    return this.httpClient.post<any>(this.url + "/update-product-cart", productCart);
   }
 
 }

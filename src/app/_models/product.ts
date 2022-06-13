@@ -1,4 +1,5 @@
 export interface IProduct {
+    _id: string;
     title: string;
     description: string;
     price: number;
@@ -10,6 +11,7 @@ export interface IProduct {
 }
 
 export class Product implements IProduct {
+    _id!: string;
     title!: string;
     description!: string;
     price!: number;

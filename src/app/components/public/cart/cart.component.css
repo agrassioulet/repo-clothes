@@ -11,8 +11,8 @@ footer {
 
 .left_part {
     background-color: #F4F4F4;
-    padding-left: 12%;
-    padding-right: 3%;
+    padding-left: 100px;
+    padding-right: 100px;
     flex-grow: 1;
 }
 
@@ -81,6 +81,12 @@ footer {
     border: none;
 }
 
+.order_btn  {
+    color: black;
+    background-color: white;
+    border: solid 1px black;
+    padding: 15px;
+}
 
 /* RIGHT PART SUMMARY */
 
