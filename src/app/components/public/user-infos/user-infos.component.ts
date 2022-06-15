@@ -20,7 +20,7 @@ export class UserInfosComponent implements OnInit {
     email: new FormControl('', [Validators.email]),
     firstname: new FormControl('', []),
     lastname: new FormControl('', []),
-    postalCode: new FormControl('', []),
+    postalCode: new FormControl('', [Validators.pattern('[0-9]{5}')]),
   })
 
   isSaved: boolean = false;
@@ -47,6 +47,9 @@ export class UserInfosComponent implements OnInit {
         this._auth.setDataInLocalStorage('userData', JSON.stringify(result.data));
         this._auth.setDataInLocalStorage('token', result.token);
         this.isSaved = true
+        setTimeout(() => {
+          this.isSaved = false
+        }, 4000);
       }
     })
   }

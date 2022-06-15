@@ -41,4 +41,8 @@ export class ProductService {
     return this.httpClient.post<any>(this.url + "/update-product-cart", productCart);
   }
 
+  public orderCart() {
+    return this.httpClient.get<{status: Number, data: any}>(this.url + "/order-cart");
+  }
+
 }

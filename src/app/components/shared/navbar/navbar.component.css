@@ -38,6 +38,14 @@ nav a {
     margin-left: 35px;
 }
 
+#input-search-bar {
+    width: 0;
+    /* display: none; */
+    visibility: hidden;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
 img {
     width: 100px;
 }

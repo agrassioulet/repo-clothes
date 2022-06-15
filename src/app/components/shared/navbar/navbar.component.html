@@ -11,16 +11,20 @@
             <a routerLink="" (click)="toggleNav('children')">Enfant</a>
             <a routerLink="" (click)="toggleNav('boots')">Bottes</a>
             <a routerLink="" (click)="toggleNav('outerwear')">Vêtements d'extérieur</a>
-            <a routerLink=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            <!-- <a (click)="displaySearchBar()"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <div>
+                <input type="text" id='input-search-bar'>
+                <button type="button"></button>
+            </div> -->
 
 
         </div>
         <div class="nav_bar_right">
-            <a>La marque</a>
+            <a class="cursor-pointer">La marque</a>
             <a><i class="fa-solid fa-location-dot cursor-pointer"></i></a>
-            <a (click)="togglePanel=!togglePanel" class="cursor-pointer"><i class="fa-solid fa-user"></i></a>
+            <a (click)="togglePanel=!togglePanel" title="Authentification" class="cursor-pointer"><i class="fa-solid fa-user"></i></a>
             <span>|</span>
-            <a routerLink="/cart" class="a_cart_shopping"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a routerLink="/cart" title="Accéder au panier" class="a_cart_shopping"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
 

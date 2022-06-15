@@ -1,5 +1,6 @@
 .delivery_payment_container {
     background-color: #F4F4F4;
+    overflow: hidden;
 }
 
 .delivery_payment_container h3,

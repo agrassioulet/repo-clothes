@@ -13,7 +13,7 @@ export class LoginPanelComponent implements OnInit, OnChanges {
   @Input() activePane: PaneType = 'left';
   @Input() _togglePanel!: boolean;
   openPanel = true
-  result : ResultType = ''
+  result: ResultType = ''
   message = ''
   mode: ModeType = 'connexion';
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
@@ -48,7 +48,7 @@ export class LoginPanelComponent implements OnInit, OnChanges {
     if (element != null && content != null) {
       if (this.openPanel) {
         element.style.right = "0"
-        content.style.filter = "grayscale(1)"
+        content.style.filter = "grayscale(0.7)"
       }
       else {
         element.style.right = "-50vw"
@@ -86,17 +86,19 @@ export class LoginPanelComponent implements OnInit, OnChanges {
 
 
   onRegister() {
+    console.log("OnRegister")
     if (this.loginFormControl.valid && this.passwordFormControl.valid) {
-      console.log("postTypeRequest : register")
+      console.log('form fields valid')
       this._api.postTypeRequest('user/register', {
         login: this.loginFormControl.value,
         password: this.passwordFormControl.value,
-      }).subscribe((res: any) => {
+      }).subscribe((result: any) => {
+        console.log("result", result)
         // Si la connexion a pu s'établir
-        if (res.status && res.status == 1) {
+        if (result.status && result.status == 1) {
 
-          this._auth.setDataInLocalStorage('userData', JSON.stringify(res.data));
-          this._auth.setDataInLocalStorage('token', res.token);
+          this._auth.setDataInLocalStorage('userData', JSON.stringify(result.data));
+          this._auth.setDataInLocalStorage('token', result.token);
           this.message = 'Vous êtes connecté'
         }// sinon
         else {
@@ -123,6 +125,6 @@ export class LoginPanelComponent implements OnInit, OnChanges {
 
 type PaneType = 'left' | 'right';
 type ModeType = 'connexion' | 'subscription';
-type ResultType = '' |'connected' | 'registerFail' | 'loginFail';
+type ResultType = '' | 'connected' | 'registerFail' | 'loginFail';
 
 

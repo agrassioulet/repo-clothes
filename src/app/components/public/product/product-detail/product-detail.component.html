@@ -27,9 +27,11 @@
             </div>
 
         <button type="button" class="add_to_cart_button" (click)="addProductToCart()">AJOUTER AU PANIER</button>
+        <br>
+        <button type="button" class="btn btn-light mt-3" routerLink="/product-list/{{product.category}}/all">Retour liste</button>
 
         <div *ngIf="resultBuying=='authentificationNeeded'" class="alert alert-warning" role="alert">Vous devez vous authentifier</div>
-        <div *ngIf="resultBuying=='productAdded'" class="alert alert-success" role="alert">Produit ajouté</div>
+        <div *ngIf="resultBuying=='productAdded'" class="alert alert-success mt-3" role="alert">Produit ajouté</div>
 
     </div>
 

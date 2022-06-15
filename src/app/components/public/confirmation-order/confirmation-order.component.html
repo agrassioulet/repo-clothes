@@ -2,11 +2,11 @@
 
     <div class="container">
 
-        <div class="confirmation_order_block">
+        <div class="confirmation_order_block" *ngIf="isOrderSaved">
             <h2>CONFIRMATION COMMANDE</h2>
-            <p>Votre commande a bien été enregistrée sous les références suivantes :</p>
-            <p class="mt-1 font-size-2"><strong>AG4R5D65ZZD</strong></p>
-            <p class="mt-3 mb-0">Vous allez recevoir un e-mail de confirmation.</p>
+            <p>Votre commande a bien été enregistrée sous la référence suivante :</p>
+            <p class="mt-1 font-size-2"><strong>{{ refClient }}</strong></p>
+            <p class="my-3">Vous allez recevoir un e-mail de confirmation.</p>
         </div>
 
     </div>

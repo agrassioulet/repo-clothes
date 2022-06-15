@@ -25,8 +25,7 @@ export class NavbarComponent implements OnInit {
       // OPEN SUBMENU
       if (str != '') {
         sub_menu.style.display="block"
-        content.style.backgroundColor="green !important;"
-        this.auth.getUserDetails() 
+        content.style.filter = "grayscale(.7)"
       }
       // CLOSE SUBMENU
       else {
@@ -36,6 +35,15 @@ export class NavbarComponent implements OnInit {
       }
     }
 
+  }
+
+  displaySearchBar() {
+    var inputSearchBar = document.getElementById('input-search-bar')
+    if(inputSearchBar != null) {
+      inputSearchBar.style.visibility = 'visible'
+
+      inputSearchBar.style.width = '150px'
+    }
   }
 
 

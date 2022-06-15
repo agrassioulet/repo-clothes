@@ -22,13 +22,15 @@ export class CartComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getCart()
+    if(this.auth.isUserLogin()) {this.getCart()}
   }
 
   getCart() {
     if (this.auth.isUserLogin()) {
       this.productService.getCart().subscribe(result => {
         console.log('cart :', result)
+        console.log('Length :', result.data.length)
+
         this.cart = result.data
       })
     }

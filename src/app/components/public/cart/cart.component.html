@@ -3,63 +3,73 @@
 
         <h2>PANIER</h2>
 
-        <div class="items">
-            <div class="item" *ngFor="let productCart of cart">
-
-                <div class="left_part_item">
-                    <img src="./../../../assets/images/5c0b329d792b3bf8f647532366eb06184f6b9efb_Q8282_1.avif" alt="">
-
-                    <div class="item_properties">
-                        <h3 class="title_property">{{ productCart.id_product.title }}</h3>
-                        <p><span class="item_property">Couleur : </span> <span class="item_value">TERRE</span></p>
-                        <p><span class="item_property">Taille : </span> <span class="item_value">
-
-                            <select class="size_select" [formControl]="selectFormControl">
-                                <option selected>40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
-                              </select>
-
-                        </span></p>
-                        <p><span class="item_property">Prix : </span> <span
-                                class="item_value">{{productCart.id_product.price | currency: 'EUR'}}</span></p>
-                        <p><span class="item_property">Quantité : </span>
-                            <span class="less_quantity_action"><i (click)="decreaseQuantity(productCart)" 
-                                class="fa-solid fa-minus"></i></span>
-                            <span class="item_value">{{productCart.quantity}}</span>
-                            <span class="plus_quantity_action"><i (click)="increaseQuantity(productCart)" 
-                                class="fa-solid fa-plus"></i></span>
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="rigt_part_item">
-                    <div class="actions">
-                        <button mat-icon-button [matMenuTriggerFor]="menuActions" class="more_vert_actions">
-                            <mat-icon>more_vert</mat-icon>
-                        </button>
-                        <mat-menu #menuActions="matMenu">
-                            <button mat-menu-item (click)="deleteProductCart(productCart)">
-                                <mat-icon>delete</mat-icon>
-                                <span>Supprimer</span>
-                            </button>
-                            <button mat-menu-item>
-                                <mat-icon>edit</mat-icon>
-                                <span>Modifier</span>
-                            </button>
-                        </mat-menu>
-                    </div>
-                </div>
-            </div>
+        <div class="" *ngIf="!auth.isUserLogin()">
+            Authentifiez-vous afin d'accéder à votre panier
         </div>
 
-        <button type="button" class="order_btn btn my-3"
-            (click)="order()" *ngIf="auth.isUserLogin()">COMMANDER</button>
+        <div class="container_items" *ngIf="auth.isUserLogin()">
+            <div class="empty_cart" *ngIf="cart.length <= 0">Votre panier est vide</div>
+
+            <div class="items" *ngIf="cart.length > 0">
+                <div class="item" *ngFor="let productCart of cart">
+
+                    <div class="left_part_item">
+                        <img src="./../../../assets/images/5c0b329d792b3bf8f647532366eb06184f6b9efb_Q8282_1.avif"
+                            alt="">
+
+                        <div class="item_properties">
+                            <h3 class="title_property">{{ productCart.id_product.title }}</h3>
+                            <p><span class="item_property">Couleur : </span> <span class="item_value">TERRE</span></p>
+                            <p><span class="item_property">Taille : </span> <span class="item_value">
+
+                                    <select class="size_select" [formControl]="selectFormControl">
+                                        <option selected>40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                    </select>
+
+                                </span></p>
+                            <p><span class="item_property">Prix : </span> <span
+                                    class="item_value">{{productCart.id_product.price | currency: 'EUR'}}</span></p>
+                            <p><span class="item_property">Quantité : </span>
+                                <span class="less_quantity_action"><i (click)="decreaseQuantity(productCart)"
+                                        class="fa-solid fa-minus"></i></span>
+                                <span class="item_value">{{productCart.quantity}}</span>
+                                <span class="plus_quantity_action"><i (click)="increaseQuantity(productCart)"
+                                        class="fa-solid fa-plus"></i></span>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="rigt_part_item">
+                        <div class="actions">
+                            <button mat-icon-button [matMenuTriggerFor]="menuActions" class="more_vert_actions">
+                                <mat-icon>more_vert</mat-icon>
+                            </button>
+                            <mat-menu #menuActions="matMenu">
+                                <button mat-menu-item (click)="deleteProductCart(productCart)">
+                                    <mat-icon>delete</mat-icon>
+                                    <span>Supprimer</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <mat-icon>edit</mat-icon>
+                                    <span>Modifier</span>
+                                </button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="order_btn btn my-3" (click)="order()" *ngIf="auth.isUserLogin()">COMMANDER</button>
+
+            </div>
 
 
+        </div>
 
+        <p class="my-3"><a routerLink="" class="cursor-pointer">Retour accueil</a></p>
 
     </div>
 

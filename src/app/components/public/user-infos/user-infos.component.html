@@ -27,7 +27,7 @@
 
                 <div class="form-group d-flex align-items-center mb-2">
                     <label style="width:100px;" for="InputLastNameUserInfos" class="">Date de naissance</label>
-                    <input style="width:50%;" type="text" class="form-control mx-3" id="InputLastNameUserInfos"
+                    <input style="width:50%;" type="date" class="form-control mx-3" id="InputLastNameUserInfos"
                         [(ngModel)]="user.dateOfBirth" formControlName="dateOfBirth">
                 </div>
 
@@ -35,9 +35,9 @@
                     <label style="width:100px;" for="InputLastNameUserInfos" class="">Email</label>
                     <input style="width:50%;" type="text" class="form-control mx-3" id="InputLastNameUserInfos"
                         [(ngModel)]="user.email" formControlName="email">
-                        <div *ngIf="f.get('email')?.invalid && form.touched" class="feedback">
-                            Email invalide
-                        </div>
+                    <div *ngIf="f.get('email')?.invalid && form.touched" class="feedback">
+                        Email invalide
+                    </div>
                 </div>
 
                 <div class="form-group d-flex align-items-center mb-2">
@@ -50,6 +50,9 @@
                     <label style="width:100px;" for="InputPostalCodeUserInfos">Code postal</label>
                     <input style="width:50%;" type="text" class="form-control mx-3" id="InputPostalCodeUserInfos"
                         [(ngModel)]="user.postalCode" formControlName="postalCode">
+                    <div *ngIf="f.get('postalCode')?.invalid && form.touched" class="feedback">
+                        Code postal invalide
+                    </div>
                 </div>
 
                 <div class="form-group d-flex align-items-center mb-2">
@@ -68,8 +71,8 @@
                     </select>
                 </div>
 
-                <button type="button" class="save_user_infos_btn btn mx-2"
-                    (click)="saveUserInfos()" [disabled]="!userForm.valid">ENREGISTRER</button>
+                <button type="button" class="save_user_infos_btn btn mx-2" (click)="saveUserInfos()"
+                    [disabled]="!userForm.valid">ENREGISTRER</button>
                 <button type="button" class="back_btn btn" routerLink="">RETOUR</button>
 
                 <div *ngIf="isSaved" class="alert alert-success" role="alert">

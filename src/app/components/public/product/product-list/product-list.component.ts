@@ -40,6 +40,7 @@ export class ProductListComponent implements OnInit {
     if (element != null) {
       element.style.right = "0"
     }
+    this.resetFilterFields()
   }
 
   closeFilterSideWindow() {
@@ -54,13 +55,44 @@ export class ProductListComponent implements OnInit {
   }
 
   filterPrice() {
+    console.log('min price', this.minPriceFormControl.value)
+    console.log('max price', this.maxPriceFormControl.value)
+
+    var minVal = this.minPriceFormControl.value == null ? 0 : this.minPriceFormControl.value
+    var maxVal = this.maxPriceFormControl.value == null ? Infinity : this.maxPriceFormControl.value
+
+
+    console.log('min price post', minVal)
+    console.log('max price post', maxVal)
+
+    
     this.productService.getProductsByCategory(this.category).subscribe(result => {
       this.data = result.filter(
-        (product: Product) => product.price >= this.minPriceFormControl.value 
-        &&  product.price <= this.maxPriceFormControl.value
+        (product: Product) => product.price >= minVal 
+        &&  product.price <= maxVal
         )
     })
     console.log("data", this.data)
+  }
+
+
+  sort(type: string) {
+    if(type == 'ascending') {
+      this.data = this.data.sort((product1, product2) => {
+        return product1.price <= product2.price ? -1 : 1
+      })
+    }
+    else if (type == 'descending') {
+      this.data = this.data.sort((product1, product2) => {
+        return product1.price >= product2.price ? -1 : 1
+      })
+    }
+    this.hideSortByMenu=!this.hideSortByMenu
+  }
+
+  resetFilterFields() {
+    this.minPriceFormControl.reset()
+    this.maxPriceFormControl.reset()
   }
 
 }

@@ -1,6 +1,7 @@
 <div id="login_panel">
 
-    <button type="button" class="mb-4" (click)="togglePanel()">CLOSE</button>
+    
+    <p class="cursor-pointer font-size-6 mb-5" (click)="togglePanel()"><i class="fa-solid fa-xmark"></i></p>
 
     <div *ngIf="!_auth.isUserLogin()">
 

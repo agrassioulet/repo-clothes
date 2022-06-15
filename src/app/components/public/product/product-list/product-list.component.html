@@ -12,8 +12,8 @@
                 <div *ngIf="!hideSortByMenu" class="sub_menu_sort_by">
                     <p>Meilleures ventes</p>
                     <p>Les plus populaires</p>
-                    <p>Prix croissant</p>
-                    <p>Prix décroissant</p>
+                    <p class="cursor-pointer" (click)="sort('ascending')">Prix croissant</p>
+                    <p class="cursor-pointer" (click)="sort('descending')">Prix décroissant</p>
                 </div>
             </div>
 
@@ -74,7 +74,8 @@
     <div class="row">
         <div class="col-3 item_product" *ngFor="let product of data" (click)="getProductDetail(product)">
             <div class="image_item">
-                <img src="./../../../../assets/images/f71e035ea433729339fd838e91dd9029bad1d13b_Q264H_1.avif" alt="">
+                <img [src]="product.imageURL" alt="">
+
                 <div class="ribbon">+ détails</div>
             </div>
             <p class="title_item">{{ product.title }}</p>
@@ -84,3 +85,5 @@
     </div>
 
 </div>
+
+<!-- "./../../../../assets/images/f71e035ea433729339fd838e91dd9029bad1d13b_Q264H_1.avif" -->

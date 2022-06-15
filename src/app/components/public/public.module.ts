@@ -24,6 +24,8 @@ import { CartComponent } from './cart/cart.component';
 import { DeliveryPaymentComponent } from './delivery-payment/delivery-payment.component';
 import { ConfirmationOrderComponent } from './confirmation-order/confirmation-order.component';
 import { UserInfosComponent } from './user-infos/user-infos.component';
+import { SuccessComponent } from './success/success.component';
+import { FailureComponent } from './failure/failure.component';
 
 
 const Material = [
@@ -41,7 +43,7 @@ const Material = [
 
 @NgModule({
   declarations: [
-    ProductListComponent, ProductDetailComponent, CartComponent, DeliveryPaymentComponent, ConfirmationOrderComponent, UserInfosComponent
+    ProductListComponent, ProductDetailComponent, CartComponent, DeliveryPaymentComponent, ConfirmationOrderComponent, UserInfosComponent, SuccessComponent, FailureComponent
   ],
   imports: [PublicRoutingModule
     ,ReactiveFormsModule,CommonModule,FormsModule,NgbModule,FontAwesomeModule,

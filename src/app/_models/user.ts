@@ -2,7 +2,7 @@ export class User implements IUser {
 
     public firstname!: string;
     public lastname!: string;
-    public dateOfBirth!: string;
+    public dateOfBirth!: Date;
 
     public postalCode!: string;
     public city!: string;
@@ -19,7 +19,7 @@ export class User implements IUser {
         return {
             firstname: '',
             lastname: '',
-            dateOfBirth: '',
+            dateOfBirth: new Date(),
             postalCode: '',
             city: '',
             adress: '',
@@ -34,7 +34,7 @@ export class User implements IUser {
 export interface IUser {
     firstname: string;
     lastname: string;
-    dateOfBirth: string;
+    dateOfBirth: Date;
 
     postalCode: string;
     city: string;
