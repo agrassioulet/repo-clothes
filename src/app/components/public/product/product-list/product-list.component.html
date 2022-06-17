@@ -29,7 +29,6 @@
                             <mat-panel-description>
                             </mat-panel-description>
                         </mat-expansion-panel-header>
-                        <p>This is the primary content of the panel.</p>
                     </mat-expansion-panel>
 
                     <mat-expansion-panel>
@@ -38,7 +37,6 @@
                             <mat-panel-description>
                             </mat-panel-description>
                         </mat-expansion-panel-header>
-                        <p>This is the primary content of the panel.</p>
                     </mat-expansion-panel>
 
                     <mat-expansion-panel>
@@ -47,11 +45,11 @@
                             <mat-panel-description>
                             </mat-panel-description>
                         </mat-expansion-panel-header>
-                        <p>This is the primary content of the panel.</p>
 
                         <mat-form-field appearance="fill">
                             <mat-label>Prix min</mat-label>
-                            <input matInput [formControl]="minPriceFormControl" type="number" min="0">
+                            <input matInput [formControl]="minPriceFormControl" type="number" min="0" >
+                            <!-- [errorStateMatcher]="matcher" -->
                           </mat-form-field>
 
                           <mat-form-field appearance="fill">

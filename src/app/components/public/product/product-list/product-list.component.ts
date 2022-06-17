@@ -3,6 +3,8 @@ import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct, Product } from 'src/app/_models/product';
 import { ProductService } from 'src/app/_services/product.service';
+import { SpinnerService } from 'src/app/_services/spinner.service';
+import { MyErrorStateMatcher } from './default.error-matcher';
 
 @Component({
   selector: 'app-product-list',
@@ -10,29 +12,38 @@ import { ProductService } from 'src/app/_services/product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  matcher = new MyErrorStateMatcher();
   panelOpenState = false;
   hideSortByMenu: boolean = true
   data: Product[] = [];
   category: string;
 
-  minPriceFormControl = new FormControl('', [Validators.required, Validators.pattern('[0-9]*')]);
-  maxPriceFormControl = new FormControl('', [Validators.required, Validators.pattern('[0-9]*')]);
+  minPriceFormControl = new FormControl('', [Validators.pattern("(^[0-9]{3}$)|(^$)"), Validators.min(0), Validators.max(10000)]);
+  maxPriceFormControl = new FormControl('', [Validators.pattern('[0-9]*'), Validators.min(0), Validators.max(10000)]);
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private spinnerService : SpinnerService
   ) {
     var category = this.activatedRoute.snapshot.paramMap.get("category")
     this.category = category ?? ""
   }
 
   ngOnInit(): void {
-    this.productService.getProductsByCategory(this.category).subscribe(result => {
+    this.spinnerService.showSpinner()
+
+    this.productService.getProductsByCategory(this.category).subscribe(async result => {
+      
       console.log(result)
       this.data = result
       console.log(this.data)
+      // this.delayBlocking(5000)
+      this.spinnerService.hideSpinner()
     })
+
+
   }
 
   openFilterSideWindow() {
@@ -94,5 +105,15 @@ export class ProductListComponent implements OnInit {
     this.minPriceFormControl.reset()
     this.maxPriceFormControl.reset()
   }
+
+
+  delayBlocking(milliseconds: number){
+    const timeInitial : Date = new Date();
+    var timeNow : Date = new Date();
+    for ( ; timeNow.getTime() - timeInitial.getTime() < milliseconds; ){
+        timeNow = new Date();
+    }
+    console.log('Sleep done!');
+}
 
 }

@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    setTimeout(function() {
+      console.log('end timeout')
+    }, 5000);
+  }
 
   ngOnInit(): void {
   }

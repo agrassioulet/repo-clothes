@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   selectFormControl = new FormControl('', []);
 
   message = ''
-  cart: any;
+  cart: any[] = [];
 
   constructor(
     private productService: ProductService,
