@@ -1,6 +1,6 @@
 <div id="login_panel">
 
-    
+
     <p class="cursor-pointer font-size-6 mb-5" (click)="togglePanel()"><i class="fa-solid fa-xmark"></i></p>
 
     <div *ngIf="!_auth.isUserLogin()">
@@ -57,7 +57,11 @@
 
     <br>
     <a *ngIf="_auth.isUserLogin()" routerLink="/user-infos" (click)="togglePanel()"
-        class="user-info-access link-primary font-size-2">Accéder à mes informations de compte</a>
+        class="user-info-access link-primary font-size-2">Mes informations de compte</a>
+
+        <br><br>
+    <a *ngIf="_auth.isUserLogin()" routerLink="/user-orders" (click)="togglePanel()"
+        class="user-info-access link-primary font-size-2">Mes commandes</a>
 
 
 

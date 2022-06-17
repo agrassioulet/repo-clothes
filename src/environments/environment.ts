@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  URL_BACKEND: 'https://nameless-cliffs-10937.herokuapp.com',
   stripe_key: 'pk_test_51LABmdDB5BiH74m8hvBtFJwiiNMVIVkZ6QDYhoH1GfFB4haCWtYwjafh2V5X1C9FcvoVUeqOJLfm0Lj9l8TrtwNq00X4WeBA8a'
 };
 
@@ -15,3 +16,8 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+// URL_BACKEND: 'https://nameless-cliffs-10937.herokuapp.com',
+// URL_BACKEND: 'http://localhost:4000',
+

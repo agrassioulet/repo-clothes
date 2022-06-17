@@ -1,0 +1,37 @@
+<div class="container">
+
+    <h2 class="user-orders-title">Liste de mes commandes</h2>
+
+    <div class="orders-table-container">
+        <table mat-table [dataSource]="ELEMENT_DATA" class="mat-elevation-z8 my-3">
+
+            <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="ref_client">
+                <th mat-header-cell *matHeaderCellDef> Référence </th>
+                <td mat-cell *matCellDef="let element"> {{element.ref_client}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="order_date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.order_date | format_date }} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <p class="my-5"><a routerLink="" class="cursor-pointer">Retour</a></p>
+
+    </div>
+
+</div>

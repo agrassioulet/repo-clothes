@@ -2,17 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { CookedRawString } from '@angular/compiler/src/output/output_ast';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  baseUrl = 'http://localhost:4000/';
+  baseUrl = environment.URL_BACKEND + '/'
+
 
   constructor(private _http: HttpClient) {
   }
-
 
 
   getTypeRequest(url: string) {

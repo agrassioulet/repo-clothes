@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { loadStripe } from '@stripe/stripe-js';
+import { IUser, User } from 'src/app/_models/user';
+import { ProductService } from 'src/app/_services/product.service';
+import { UserService } from 'src/app/_services/user.service';
 import { environment } from '../../../../environments/environment';
 
 @Component({
@@ -8,11 +11,24 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./delivery-payment.component.css']
 })
 export class DeliveryPaymentComponent implements OnInit {
+  public user: IUser =  User.initUser();
   stripePromise = loadStripe(environment.stripe_key);
 
-  constructor() { }
+  constructor(
+    private productService: ProductService,
+    private userService: UserService
+  ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.productService.getCart().subscribe(result => {
+      console.log(result)
+    })
+
+    this.userService.getUserInfos().subscribe(result => {
+      this.user = result.data
+    })
+
+  }
 
   makePayment(amount : any) {
     const paymentHandler = (<any>window).StripeCheckout.configure({

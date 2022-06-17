@@ -10,6 +10,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { SuccessComponent } from './success/success.component';
 import { UserInfosComponent } from './user-infos/user-infos.component';
+import { UserOrdersComponent } from './user-orders/user-orders.component';
 
 const routes: Routes = [
     {
@@ -35,7 +36,9 @@ const routes: Routes = [
     },
 
     { path: 'delivery-payment/success', component: ConfirmationOrderComponent },
-    { path: 'delivery-payment/failure', component: FailureComponent }
+    { path: 'delivery-payment/failure', component: FailureComponent },
+
+    {path: 'user-orders', component: UserOrdersComponent}
 ];
 
 

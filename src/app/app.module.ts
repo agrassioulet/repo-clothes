@@ -26,6 +26,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { LayoutComponent } from './components/shared/layout/layout.component';
 import { ProfileComponent } from './components/shared/profile/profile.component';
 import { InterceptorService } from './_services/interceptor-service.service';
+import { FormatDatePipe } from './_pipes/format_date.pipe';
 
 const Material = [
   MatExpansionModule,
@@ -43,6 +44,10 @@ const myModules = [
   PublicModule
 ]
 
+const myPipes = {
+  FormatDatePipe
+}
+
 
 @NgModule({
   declarations: [
@@ -51,7 +56,7 @@ const myModules = [
     FooterComponent,
     LoginPanelComponent,
     LayoutComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     Material,
